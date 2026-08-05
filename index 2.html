@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Lorena</title><style>
+html,body{margin:0;height:100%;overflow:hidden;background:#000;font-family:Segoe UI,serif}
+body{display:flex;align-items:center;justify-content:center}
+#bg{position:fixed;inset:0;background:radial-gradient(circle at center,#260014,#000 70%)}
+#heart{position:relative;width:min(42vw,260px);height:min(42vw,260px);background:#ff2d7a;transform:rotate(-45deg);box-shadow:0 0 30px #ff2d7a,0 0 80px #ff2d7a;animation:beat 1.2s infinite}
+#heart:before,#heart:after{content:'';position:absolute;width:100%;height:100%;background:#ff2d7a;border-radius:50%}
+#heart:before{top:-50%}#heart:after{left:50%}
+h1{position:absolute;color:#ffb6de;font-size:clamp(3rem,10vw,6rem);text-shadow:0 0 10px #ff69b4,0 0 30px #ff69b4,0 0 60px #ff1493;animation:glow 2s infinite}
+.p{position:fixed;width:4px;height:4px;border-radius:50%;background:#ff5ca8}
+@keyframes beat{50%{transform:rotate(-45deg) scale(1.08)}}
+@keyframes glow{50%{text-shadow:0 0 20px #ff69b4,0 0 50px #ff1493,0 0 90px #ff1493}}
+</style></head><body><div id='bg'></div><div id='heart'></div><h1>𝓛𝓸𝓻𝓮𝓷𝓪</h1>
+<script>
+for(let i=0;i<180;i++){let d=document.createElement('div');d.className='p';d.style.left=Math.random()*100+'vw';d.style.top=Math.random()*100+'vh';d.style.opacity=Math.random();document.body.appendChild(d);
+let dx=(Math.random()-.5)*0.4,dy=(Math.random()-.5)*0.4,x=parseFloat(d.style.left),y=parseFloat(d.style.top);
+setInterval(()=>{x=(x+dx+100)%100;y=(y+dy+100)%100;d.style.left=x+'vw';d.style.top=y+'vh';},30)}
+</script></body></html>
